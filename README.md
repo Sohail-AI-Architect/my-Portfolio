@@ -23,6 +23,15 @@ Framer Motion.
 
 See the Projects section on the live site for the full list.
 
+## Methodology
+
+Both featured projects follow the same build pattern: a governed
+**SKILL.md** that encodes domain judgment, a **Worker** that acts on it,
+and an **eval set** (or deterministic checker) that proves the behavior —
+the same trio used to build production-grade AI Workers, sometimes called
+"Digital FTEs." This is a deliberate choice, not incidental: judgment lives
+in a reviewable file, not buried in a prompt or hardcoded in logic.
+
 ## Features
 
 - **Dark developer aesthetic** — terminal-inspired design with neon green accents
