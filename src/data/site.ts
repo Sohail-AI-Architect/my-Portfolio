@@ -1,14 +1,15 @@
 // Site configuration - Edit this file to update portfolio content
 export const siteConfig = {
   name: "Sohail Nawaz",
-  // TODO: Domain not yet purchased. Update canonicalUrl to your real domain once you have one.
-  // For now, canonicalUrl points to the Vercel deployment URL.
-  domain: "agentdev.io",
+  // Canonical site URL. Override with NEXT_PUBLIC_SITE_URL once a custom domain is live.
+  domain: "potfolio-ten-smoky.vercel.app",
   title: "Agentic AI Developer | AI Agents · SaaS · Cloud-Native Systems",
   description:
     "Agentic AI Developer building AI agents, Digital FTEs, SaaS applications, automation systems, and cloud-native software for real-world business problems.",
   ogImage: "/og.png",
-  canonicalUrl: "https://agentdev.io",
+  canonicalUrl:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://potfolio-ten-smoky.vercel.app",
 
   // Professional positioning
   hero: {
@@ -54,7 +55,7 @@ export const siteConfig = {
 
   // Stats
   stats: [
-    { value: "8", label: "Projects Shipped" },
+    { value: "9", label: "Projects Shipped" },
     { value: "3", label: "MCP / Agent Tools Built" },
     { value: "1", label: "AI-Native Content System" },
     { value: "Open", label: "To Freelance" },
@@ -130,7 +131,10 @@ export const siteConfig = {
     description:
       "Have an AI product, automation idea, or business workflow that could be improved with intelligent software?",
     buttons: {
-      primary: { label: "Let's Work Together", href: "#contact" },
+      primary: {
+        label: "Let's Work Together",
+        href: "mailto:sohailmahum8@gmail.com?subject=Project%20Inquiry",
+      },
       secondary: { label: "View GitHub", href: "https://github.com/Sohail-AI-Architect" },
       tertiary: { label: "Email Me", href: "mailto:sohailmahum8@gmail.com" },
     },

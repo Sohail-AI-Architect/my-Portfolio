@@ -92,7 +92,7 @@ export function generateCV(): void {
   doc.setFont("helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(...DARK);
-  doc.text("Sohail", MARGIN_LEFT, y);
+  doc.text(siteConfig.name, MARGIN_LEFT, y);
   y += 8;
 
   // Title
@@ -134,8 +134,15 @@ export function generateCV(): void {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8);
   doc.setTextColor(...GRAY);
-  doc.text(contactParts.join("  |  "), MARGIN_LEFT, y);
-  y += 6;
+  const contactLines = doc.splitTextToSize(
+    contactParts.join("  |  "),
+    CONTENT_WIDTH
+  );
+  for (const line of contactLines) {
+    doc.text(line, MARGIN_LEFT, y);
+    y += 4;
+  }
+  y += 2;
 
   // Separator line
   doc.setDrawColor(220, 220, 220);
@@ -484,7 +491,7 @@ export function generateCV(): void {
     doc.setFontSize(7);
     doc.setTextColor(...LIGHT_GRAY);
     doc.text(
-      `Sohail  |  Agentic AI Developer  |  Page ${i} of ${totalPages}`,
+      `${siteConfig.name}  |  Agentic AI Developer  |  Page ${i} of ${totalPages}`,
       PAGE_WIDTH / 2,
       PAGE_HEIGHT - 10,
       { align: "center" }
@@ -492,5 +499,7 @@ export function generateCV(): void {
   }
 
   // Save
-  doc.save("Sohail-Agentic-AI-Developer-CV.pdf");
+  doc.save(
+    `${siteConfig.name.replace(/\s+/g, "-")}-Agentic-AI-Developer-CV.pdf`
+  );
 }

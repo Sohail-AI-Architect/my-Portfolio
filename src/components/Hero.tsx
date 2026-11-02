@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { GithubIcon } from "./SocialIcons";
 import { siteConfig } from "@/data/site";
 import Terminal from "./Terminal";
@@ -56,7 +56,8 @@ export default function Hero() {
                 {siteConfig.hero.availability}
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-gray-400 bg-white/5 border border-white/10 rounded-full">
-                📍 {siteConfig.hero.location}
+                <MapPin className="w-3 h-3" aria-hidden="true" />
+                {siteConfig.hero.location}
               </span>
             </motion.div>
 

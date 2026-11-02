@@ -5,7 +5,6 @@ import { Menu, X, Mail, Download, Loader2 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./SocialIcons";
 import { siteConfig } from "@/data/site";
 import { motion, AnimatePresence } from "framer-motion";
-import { generateCV } from "@/lib/generate-cv";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +16,7 @@ export default function Navbar() {
     if (cvLoading) return;
     setCvLoading(true);
     try {
+      const { generateCV } = await import("@/lib/generate-cv");
       generateCV();
     } catch {
       // Silently fail — jsPDF errors are rare but handled

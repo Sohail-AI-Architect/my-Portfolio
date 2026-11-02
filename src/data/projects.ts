@@ -44,6 +44,19 @@ export const projects: Project[] = [
     demo: "https://meeting-action-extractor-omega.vercel.app",
   },
   {
+    title: "Furniro E-Commerce",
+    slug: "furniro-e-commerce",
+    category: "Full-Stack E-Commerce",
+    description:
+      "Pixel-perfect, fully responsive Furniro E-Commerce application built with Next.js 15, TypeScript, Tailwind CSS, and React 19.",
+    status: "completed",
+    featured: false,
+    technologies: ["TypeScript", "Next.js 15", "React 19", "Tailwind CSS"],
+    features: [],
+    github: "https://github.com/Sohail-AI-Architect/Furniro-e-commerce-project",
+    demo: "https://furniro-e-commerce-project.vercel.app",
+  },
+  {
     title: "Invoice Control Demo",
     slug: "invoice-control-demo",
     category: "AI SaaS",
